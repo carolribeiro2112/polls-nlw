@@ -1,10 +1,8 @@
 import fastify from "fastify";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../lib/prima";
 import { z } from "zod";
 
 const app = fastify();
-
-const prisma  = new PrismaClient();
 
 app.post('/polls', async (request, reply) => {
   const createPollBody = z.object({
